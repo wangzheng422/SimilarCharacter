@@ -56,9 +56,7 @@ def main():
             else:
                 # 设计一个加权音字形相似度算法，根据笔画数和四码相近程度来判断，若大于某一个阈值，则写入相近字文件
                 write_index, voice_index, similarity_index = get_similar(i,j)
-                if (voice_index == 1 and write_index >= 0.6) or write_index >= 0.9:
-                    file1.write(j)
-                elif similarity_index >= 0.85:
+                if similarity_index >= 0.95:
                     file1.write(j)
                 else:
                     pass
